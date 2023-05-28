@@ -72,6 +72,13 @@ group :test do
 end
 
 gem "cssbundling-rails", "~> 1.1"
-
 gem "jsbundling-rails", "~> 1.1"
 gem "devise" 
+
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'rails-ujs', '~> 0.1.0'
+gem 'turbolinks'
+gem 'bootstrap'
+gem 'railties'
+gem 'sass-rails'
+gem 'bootstrap-sass'
