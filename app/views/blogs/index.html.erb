@@ -1,0 +1,21 @@
+<div class="container">
+<div style="text-align:end";>
+<%=link_to "Create new blog",new_blog_path, class:"btn btn-primary"%>
+</div>
+  <% @blog.each do |blog| %>
+    <div class="card my-5">
+      <div class="card-header">
+        Featured
+      </div>
+      <div class="card-body" data-bs-toggle="collapse" data-bs-target="#collapse<%= blog.id %>" aria-expanded="false" aria-controls="collapse<%= blog.id %>">
+        <h4 class="card-title"><%= blog.title %></h4> 
+        <p class="card-text"><span><%=image_tag("icon1.png",size: "20x18")%></i></span><%= blog.sub_title %></p>
+       
+        <%= render "shared/collapse", content: blog.content, blog_id: blog.id %>
+      </div>
+      <div class="card-footer text-body-secondary">
+        <%= blog.created_at %>
+      </div>
+    </div>
+  <% end %>
+</div>
