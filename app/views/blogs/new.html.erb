@@ -2,15 +2,12 @@
   <%= form_with model: @blog, local: true do |f| %>
     <%= f.label :title,"Enter your title" %>
     <%= f.text_field :title, class: 'form-control', required: true %><br>
-
     <%= f.label :sub_title, "Enter sub title" %>
     <%= f.text_field :sub_title, class: 'form-control', required: true %><br>
-
-      <%= f.label :content, "Enter content" %>
-    <%= f.text_field :content, class: 'form-control', required: true %><br>
-
-       <%= f.label :user_id, "Enter user_id" %>
-    <%= f.text_field :user_id, class: 'form-control', required: true %><br>
+    <%= f.label :content, "Enter content" %>
+    <%= f.text_area :content, class: 'form-control',  rows: 3, required: true %><br>
+ 
+    <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.submit "Save blog", class: "btn btn-primary" %>
     <%= link_to "Back", :back ,class:"btn btn-primary"%>
   <% end %>
